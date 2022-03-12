@@ -19,6 +19,10 @@ public class OrderLine {
         this.status = status;
     }
 
+    OrderLine(boolean specialOffer){
+        this.specialOffer = specialOffer;
+    }
+
     public void setQty(int qty) {
         this.qty = qty;
     }

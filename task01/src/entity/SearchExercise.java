@@ -62,11 +62,8 @@ public class SearchExercise {
      */
     public boolean hasActiveOrders(User user) {
         for (Order order: user.getOrders()){
-            ArrayList<OrderLine> l = order.getOrdersLine();
-            for (OrderLine lol: l){
-                if(lol.getStatus() == OrderStatus.ACTIVE){
-                    return true;
-                }
+            if(order.getStatus() == OrderStatus.ACTIVE){
+                return true;
             }
         }
         return false;
@@ -77,7 +74,7 @@ public class SearchExercise {
      */
     public boolean canBeReturned(Order order) {
         for (OrderLine o: order.getOrdersLine()){
-            if(o.isSpecialOffer()){
+            if(o.isSpecialOffer() == true){
                 return false;
             }
         }
@@ -90,6 +87,11 @@ public class SearchExercise {
      * @return
      */
     public Order getMaxPriceOrder(User user) {
+
+        if(user.getOrders().size() == 0){
+            return null;
+        }
+
         Order maxOrder = new Order();
 
         for (Order order: user.getOrders()){

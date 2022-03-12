@@ -44,7 +44,7 @@ public class Order {
     }
 
     public Order(OrderLine ...orders) {
-        this.orders = new ArrayList<OrderLine>();
+        this.orders = new ArrayList<>();
         for (OrderLine l: orders){
             this.orders.add(l);
         }

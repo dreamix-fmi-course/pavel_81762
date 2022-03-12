@@ -10,8 +10,8 @@ public class Main {
         Item iphone = new Item("Steve jobs invented me", new BigDecimal(1299.00));
         Item mouse = new Item("With side buttons for playing WOW", new BigDecimal(27.99));
 
-        OrderLine phone = new OrderLine(iphone, OrderStatus.INACTIVE, false, 2);
-        OrderLine asusMonitor = new OrderLine(monitor, OrderStatus.INACTIVE, true, 1);
+        OrderLine phone = new OrderLine(iphone, OrderStatus.ACTIVE, false, 2);
+        OrderLine asusMonitor = new OrderLine(monitor, OrderStatus.ACTIVE, true, 1);
         OrderLine razerMouse = new OrderLine(mouse, OrderStatus.ACTIVE, true, 3);
         OrderLine topki = new OrderLine(basketball, OrderStatus.ACTIVE, true, 2);
 
@@ -19,12 +19,11 @@ public class Main {
         Order yavorSecondOrder = new Order(topki, phone);
 
         User yavor = new User("yavor", 23, yavorsOrder, yavorSecondOrder);
+        User pavel = new User("pavel", 23, yavorSecondOrder);
+        System.out.println(pavel);
+        System.out.println(pavel.totalOrderPrice());
+        System.out.println(yavorsOrder);
 
-        System.out.println(yavorsOrder.totalSum());
-        System.out.println(yavor.totalOrderPrice());
 
-        System.out.println(yavor);
-
-        System.out.println();
     }
 }
