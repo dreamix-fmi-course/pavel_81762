@@ -20,7 +20,7 @@ public class ContentFile extends File{
         return lastModification;
     }
 
-    public void setLastExecution(LocalDate lastExecution) {
+    public void setLastModification(LocalDate lastExecution) {
         this.lastModification = lastExecution;
     }
 
@@ -31,7 +31,7 @@ public class ContentFile extends File{
         return copy;
     }
 
-    void modify(String content) {
+    public void modify(String content) {
         this.lastModification = LocalDate.now();
         this.content = content;
     }

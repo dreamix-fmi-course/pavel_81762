@@ -50,6 +50,14 @@ public abstract class File {
         this.location = (newLocation.charAt(newLocation.length() - 1) == '/' ? newLocation : newLocation + '/');
     }
 
+    public void execute(){
+        System.out.println("Basic execute");
+    }
+
+    public void modify(String content){
+        System.out.println("Basic modify");
+    }
+
     public abstract File copy(String location);
     public abstract String getInfo();
 }

@@ -36,7 +36,7 @@ public class ExecutableFile extends File{
                 "Last modification date: " + lastExecutionDate + "\n" + sources;
     }
 
-    void execute() {
+    public void execute() {
         System.out.println("Executing [[ " + this.getName() + " ]]");
         this.lastExecutionDate = LocalDate.now();
     }

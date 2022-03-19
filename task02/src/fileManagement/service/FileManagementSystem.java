@@ -55,9 +55,10 @@ public class FileManagementSystem {
 
             switch (commandArguments[0]){
                 case "MAKE": this.createFile(commandArguments[1], commandArguments[2], Arrays.copyOfRange(commandArguments, 2, commandArguments.length));break;
-                case "MOVE": break;
-                case "MOD": break;
-                case "END":; break;
+                case "MOVE": file.move(commandArguments[1]); break;
+                case "MOD":  file.modify(commandArguments[2]); break;
+                case "EXEC":  file.execute(); break;
+                case "END": break;
                 case "INFO":
                     System.out.println(file.getInfo());break;
                 case "COPY": File copy = file.copy(commandArguments[2]); fileManagementSystem.put(copy.getName(), copy); break;
@@ -66,7 +67,6 @@ public class FileManagementSystem {
                     System.out.println("Wrong command bro");
                     command = sc.nextLine();
             }
-            fileManagementSystem.values().stream().forEach(b -> System.out.println(b.getInfo()));
         }
     }
 }
